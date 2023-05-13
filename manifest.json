@@ -1,0 +1,37 @@
+{
+  "name": "Chrome CDM Decryptor",
+  "version": "4.10.2557.0",
+  "manifest_version": 2,
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "content-script.js",
+        "script.js"
+      ],
+      "all_frames": false,
+      "run_at": "document_start"
+    }
+  ],
+  "browser_action": {"default_icon": "icon.png"},
+  "permissions": [
+    "*://*/*",
+    "tabs",
+    "activeTab",
+    "storage",
+	"webRequest"
+  ],
+  "web_accessible_resources": [
+    "eme-logger-mod.js",
+    "popup.html",
+    "background.gif",
+	"telegram.png"
+  ]
+}
